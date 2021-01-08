@@ -4,7 +4,6 @@ import Header from "./header/header";
 const Layout = (props) => {
   return (
       <>
-          <Header/>
         <div>
             {props.children}
         </div>
