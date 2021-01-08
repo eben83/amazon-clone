@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import Layout from './components/Layout';
 import Home from './pages/home/home';
 import Checkout from './pages/checkout/checkout' 
+import Login from "./pages/login/login";
 
 import './custom.css'
 import Header from "./components/header/header";
