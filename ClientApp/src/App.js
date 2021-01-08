@@ -10,6 +10,9 @@ const App = () => {
     return (
         <Layout>
             <switch>
+                <Route path='/login'>
+                    <h1>Login page</h1>
+                </Route>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/checkout' component={Checkout} />
             </switch>
