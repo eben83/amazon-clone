@@ -1,17 +1,43 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/home/home';
 import Checkout from './pages/checkout/checkout' 
 import Login from "./pages/login/login";
-
-import './custom.css'
+import {useStateValue} from "./StateProvider";
+import {auth} from "./firebase";
 import Header from "./components/header/header";
 
+import './custom.css'
+
 const App = () => {
+    
+    const [{}, dispatch] = useStateValue();
+    
+    useEffect(() => {
+        auth
+            .onAuthStateChanged(authUser => {
+            console.log("The user is >>>>>>", authUser);
+            
+            if(authUser) {
+                
+                dispatch({
+                    type: 'SET_USER',
+                    user: authUser,
+                })
+            } 
+            else {
+                dispatch({
+                    type: 'SET_USER',
+                    user: null,
+                })
+            }
+        })
+    },[])
+    
     return (
         <Layout>
-            <switch>
+            <Switch>
                 <Route path='/login'>
                     <Login/>
                 </Route>
@@ -23,7 +49,7 @@ const App = () => {
                     <Header/>
                     <Home/>
                 </Route>
-            </switch>
+            </Switch>
         </Layout>
     )
 }
