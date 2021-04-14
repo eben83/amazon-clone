@@ -13,7 +13,7 @@ const App = () => {
         <Layout>
             <switch>
                 <Route path='/login'>
-                    <h1>Login page</h1>
+                    <Login/>
                 </Route>
                 <Route exact path='/checkout' >
                     <Header/>
