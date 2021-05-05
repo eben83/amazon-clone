@@ -7,6 +7,7 @@ import Login from "./pages/login/login";
 import {useStateValue} from "./StateProvider";
 import {auth} from "./firebase";
 import Header from "./components/header/header";
+import Payment from "./components/payment/payment";
 
 import './custom.css'
 
@@ -44,6 +45,10 @@ const App = () => {
                 <Route exact path='/checkout' >
                     <Header/>
                     <Checkout/>
+                </Route>
+                <Route exact path='/payment' >
+                    <Header/>
+                    <Payment />
                 </Route>
                 <Route exact path='/' >
                     <Header/>
