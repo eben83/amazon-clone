@@ -126,3 +126,5 @@ storage.ide*
 /Presentation/Nop.Web/App_Data/DataProtectionKeys/*.xml
 /Presentation/Nop.Web/App_Data/dataSettings.json
 /Presentation/Nop.Web/App_Data/installedPlugins.json
+/node_modules/
+/package-lock.json
